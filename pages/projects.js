@@ -7,23 +7,10 @@ import '../utils.js';
 import Block from '../components/Block';
 
 export default class ProjectsPage extends React.Component {
+  async static getInitialProps() {
+    return { data: await (await fetch('/static/projects.json')).json()}
+  }
   render() {
-    // please fill this with our current projects
-    // do not add forks which we did not work on much
-    const data = [
-      {'name': 'GNS',
-       'languages': 'JavaScript, TypeScript',
-       'url': 'https://github.com/hellomouse/gns',
-       'description': 'GitHub Notification Service For IRC',
-       'developers': 'wolfy1339, BWBellairs, handicraftsman (webpanel initial commits)',
-       'forked': 'No'},
-      {'name': 'ParticlePlate',
-       'languages': 'TypeScript',
-       'url': 'https://github.com/hellomouse/particleplate',
-       'description': 'An Express + TypeScript + React + ReactRouter + Redux + ReactRedux + PostCSS + MaterialUI boilerplate',
-       'developers': 'handicraftsman',
-       'forked': 'No'}
-    ];
     return (
       <Block>
         <Head>
@@ -33,7 +20,7 @@ export default class ProjectsPage extends React.Component {
         <h4>{'Our projects'}</h4>
 
         <ReactTable
-          data={data}
+          data={this.props.data}
           columns={
             [{Header: 'Name', accessor: 'name', width: 128, className: 'hm-row'},
              {Header: 'Languages', accessor: 'languages', className: 'hm-row'},

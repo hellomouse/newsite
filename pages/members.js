@@ -7,18 +7,10 @@ import '../utils.js';
 import Block from '../components/Block';
 
 export default class MembersPage extends React.Component {
+  async static getInitialProps() {
+    return { data: await (await fetch('/static/members.json')).json()}
+  }
   render() {
-    const data = [
-      {'name': 'handicraftsman',
-       'github': 'https://github.com/handicraftsman/',
-       'avatar': 'https://avatars3.githubusercontent.com/u/6382804?s=460&v=4',
-       'description': 'A random C/++, JavaScript, Ruby, and Lisp coder. Author of this website version. Wrote tons of useless irc bot frameworks in different languages.'},
-      {'name': 'ohnx',
-       'github': 'https://github.com/ohnx/',
-       'avatar': 'https://avatars3.githubusercontent.com/u/6683648',
-       'description': 'A random C, Java/JavaScript, and Python coder. Not the author of this website version. Wrote a useless irc bot in C. Generally considered useless.'}
-    ]
-  
     return (
       <Block>
         <Head>
@@ -28,10 +20,10 @@ export default class MembersPage extends React.Component {
         <p>{'We need to fill this too'}</p>
 
         <ReactTable
-         data={data}
+         data={this.props.data}
          columns={
-          [{Header: 'Avatar', accessor: 'avatar', width: 64, className: 'hm-row', Cell:
-            row => <img width="48" src={row.value.toString()} />},
+          [{Header: 'Avatar', accessor: 'name', width: 64, className: 'hm-row', Cell:
+            row => <img width="48" src={`https://github.com/${row.value.toString()}.png`} />},
            {Header: 'Name', accessor: 'name', width: 128, className: 'hm-row'},
            {Header: 'GitHub', accessor: 'github', width: 64, className: 'hm-row', Cell:
             row => <div className='hm-cell-gh'><a href={row.value.toString()}>{'GitHub'}</a></div>},
