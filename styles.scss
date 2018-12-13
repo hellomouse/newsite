@@ -1,0 +1,24 @@
+a {
+  cursor: pointer;
+}
+
+.hm-table {
+  border-radius: 16px;
+
+  transition: box-shadow 0.3s;
+
+  &:hover {
+   @media (min-width: 1032px) {
+      box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75); 
+    }
+  }
+}
+
+.hm-row {
+  white-space: normal !important;
+  text-overflow: initial !important
+}
+
+.hm-cell-gh {
+  text-align: center;
+}
