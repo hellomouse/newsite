@@ -7,8 +7,8 @@ import '../utils.js';
 import Block from '../components/Block';
 
 export default class ProjectsPage extends React.Component {
-  async static getInitialProps() {
     return { data: await (await fetch('/static/projects.json')).json()}
+  static async getInitialProps() {
   }
   render() {
     return (
