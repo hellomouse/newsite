@@ -13,9 +13,9 @@ export default class IndexPage extends React.Component {
           <title>{'Hellomouse - Home'}</title>
         </Head>
         <Block>
-          <h1 style={{textAlign: "center"}}>{'Hello, mouse!'}</h1>
+          <h1 style={{ textAlign: 'center' }}>{'Hello, mouse!'}</h1>
           <h4>{'Welcome to this site!'}</h4>
-          <img style={{width: "100%"}} src="https://git.hellomouse.net/img/mouse.jpg" />
+          <img style={{ width: '100%' }} src="https://git.hellomouse.net/img/mouse.jpg" />
           <p>
             {'If you see this at our second-level domain (hellomouse.net), that means that handicraftsman finally finished rewriting our site.'}
           </p>
@@ -31,7 +31,7 @@ export default class IndexPage extends React.Component {
           <p>
             {'We have a discord guild: '} <a href='https://discord.gg/gVvHZYq'>click</a>{'.'}
           </p>
-  
+
           <p>
             {'We also run a github organization: '} <a href='https://github.com/hellomouse/'>click</a>{'.'}
           </p>

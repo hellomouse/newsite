@@ -1,6 +1,6 @@
 const withSass = require('@zeit/next-sass');
-const withCss  = require('@zeit/next-css');
-const withManifest = require('next-manifest')
+const withCss = require('@zeit/next-css');
+const withManifest = require('next-manifest');
 
 module.exports = withSass(withCss(withManifest({
   manifest: {

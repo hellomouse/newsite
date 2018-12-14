@@ -1,3 +1,4 @@
+import React from 'react';
 import Document, { Head, Main, NextScript } from 'next/document';
 import Manifest from 'next-manifest';
 import flush from 'styled-jsx/server';
