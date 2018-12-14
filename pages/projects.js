@@ -1,5 +1,5 @@
 import React from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import Head from 'next/head';
 import ReactTable from 'react-table';
 
@@ -8,8 +8,8 @@ import '../utils.js';
 import Block from '../components/Block';
 
 export default class ProjectsPage extends React.Component {
-  static PropTypes = {
-    data: propTypes.object.isRequired
+  static propTypes = {
+    data: PropTypes.object.isRequired
   };
   static async getInitialProps() {
     return { data: await (await fetch('/static/projects.json')).json() };

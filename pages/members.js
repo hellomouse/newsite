@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Head from 'next/head';
 import ReactTable from 'react-table';
 
@@ -7,6 +8,10 @@ import '../utils.js';
 import Block from '../components/Block';
 
 export default class MembersPage extends React.Component {
+  static propTypes = {
+    data: PropTypes.object.isRequired
+  };
+
   static async getInitialProps() {
     return { data: await (await fetch('/static/members.json')).json() };
   }

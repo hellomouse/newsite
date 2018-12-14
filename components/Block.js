@@ -1,11 +1,11 @@
 import React from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import './Block.scss';
 
 export default class Block extends React.Component {
-  static PropTypes = {
-    children: propTypes.node.isRequired
+  static propTypes = {
+    children: PropTypes.node.isRequired
   };
   render() {
     return (
