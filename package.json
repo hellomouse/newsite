@@ -21,7 +21,7 @@
     "node-sass": "^4.10.0",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
-    "react-table": "^6.8.6",
+    "react-table": "^6.11.5",
     "reactstrap": "^6.5.0"
   },
   "devDependencies": {
